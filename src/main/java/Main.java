@@ -10,6 +10,7 @@ public class Main {
             while (input.hasNextLine()){
                 String line = input.nextLine();
                 String[] parts = line.split("\\t");
+                //creates new star object if read line has 4 parts
                 if(parts.length == 4) {
                     String name = parts[0];
                     String constellation = parts[1];

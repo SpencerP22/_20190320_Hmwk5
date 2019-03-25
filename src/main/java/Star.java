@@ -4,17 +4,21 @@ public class Star {
     private double magnitude;
     private double distance;
 
+    //constructor
     public Star(String name, String constellation, double magnitude, double distance) {
         setName(name);
         setConstellation(constellation);
         setMagnitude(magnitude);
         setDistance(distance);
     }
+    //toString method
+    @Override
     public String toString() {
         String result = String.format("Name: %s, Constellation: %s, Magnitude: %1.2f, Distance: %1.2f", name, constellation, magnitude, distance);
         return result;
     }
 
+    //setters
     public void setName(String name) {
         this.name = name;
     }
@@ -28,6 +32,7 @@ public class Star {
         this.distance = distance;
     }
 
+    //getters
     public String getName() {
         return name;
     }
