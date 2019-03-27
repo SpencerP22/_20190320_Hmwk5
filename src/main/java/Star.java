@@ -1,4 +1,6 @@
-public class Star {
+import java.util.Objects;
+
+public class Star implements Comparable<Star>{
     private String name;
     private String constellation;
     private double magnitude;
@@ -44,5 +46,27 @@ public class Star {
     }
     public double getDistance() {
         return distance;
+    }
+
+    //compareTo method
+    public int compareTo(Star other) {
+        int result = this.name.compareToIgnoreCase(other.name);
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Star star = (Star) o;
+        return Double.compare(star.magnitude, magnitude) == 0 &&
+                Double.compare(star.distance, distance) == 0 &&
+                Objects.equals(name, star.name) &&
+                Objects.equals(constellation, star.constellation);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, constellation, magnitude, distance);
     }
 }
