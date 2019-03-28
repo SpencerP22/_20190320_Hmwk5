@@ -50,8 +50,7 @@ public class Star implements Comparable<Star>{
 
     //compareTo method
     public int compareTo(Star other) {
-        int result = this.name.compareToIgnoreCase(other.name);
-        return result;
+        return this.name.compareToIgnoreCase(other.name);
     }
 
     @Override
